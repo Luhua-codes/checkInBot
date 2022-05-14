@@ -1,0 +1,4 @@
+Gitignore info: https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+
+discord.js guide: https://discordjs.guide/#before-you-begin
+discord.js docs: https://discord.js.org/#/docs/discord.js/stable/general/welcome
