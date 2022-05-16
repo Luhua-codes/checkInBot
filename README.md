@@ -10,3 +10,20 @@ In a Discord channel, either type `/`, or click on the plus button and select "U
 ## Commands
 ### /beep
 Replies with "Boop!"
+
+### /ping
+Replies with "Pong!"
+
+### /server
+Replies with server information:
+- server name
+- number of members
+- date created
+- server description
+
+### /user
+Replies with user information:
+- Avatar link
+- User name and discriminator
+
+By default, Chibi provides information about the user that executes the command. If the `target` option is selected and filled, information will instead be provided about the target user.
