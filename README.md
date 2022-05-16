@@ -11,6 +11,9 @@ To utilize the bot, navigate to a Discord channel that Chibi has access to. Eith
 ### /beep
 Replies with "Boop!"
 
+### /help
+Replies with the list of commands and their descriptions
+
 ### /ping
 Replies with "Pong!"
 
