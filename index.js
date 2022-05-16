@@ -9,7 +9,14 @@ client.once('ready', () => {
 	console.log('Ready!'); //client is ready
 });
 
-client.commands = new Collection(); //allows access to commands in other files
+client.commands = new Collection(); //allow access to commands in other files
+const commandsPath = path.join(__dirname, 'commands'); //access commands folder
+const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js')); //get all .js files
+for(const file of commandFiles) { //for each item returned in commandFiles
+	const filePath = path.join(commandsPath, file); //get file path to this file
+	const command = require(filePath); //import this file
+	client.commands.set(command.data.name, command); //add key value pair of command name and command file to collection map of commands
+}
 
 client.on('interactionCreate', async interaction => { //listen for interactions
 	if (!interaction.isCommand()) return; //leave method if not command
