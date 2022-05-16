@@ -11,16 +11,18 @@ client.once('ready', () => {
 });
 
 client.on('interactionCreate', async interaction => { //listen for interactions
-	if(!interaction.isCommand()) return;
+	if (!interaction.isCommand()) return;
 
 	const { commandName } = interaction;
 
-	if(commandName === 'ping'){ //strict equality, always considers objs of different types to be !=
+	if (commandName === 'ping') { //strict equality, always considers objs of different types to be !=
 		await interaction.reply('Pong!');
-	}else if (commandName === 'server'){
-		await interaction.reply('Server info.');
-	}else if(commandName === 'user'){
-		await interaction.reply('User info.');
+	}
+	else if (commandName === 'server') {
+		await interaction.reply(`**Server name**: ${interaction.guild.name}\n**Total members**: ${interaction.guild.memberCount}\n**Server created on**: ${interaction.guild.createdAt}\n**Server description**: ${interaction.guild.description == null ? 'No description set' : interaction.guild.description}`); //backtick instead of single quotes allows use of template strings
+	}
+	else if (commandName === 'user') {
+		await interaction.reply(`${interaction.user.avatarURL()}\n**Your tag**:${interaction.user.tag}`);
 	}
 });
 
