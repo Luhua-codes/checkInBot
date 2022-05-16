@@ -8,22 +8,13 @@ module.exports = {
 	async execute(interaction) {
 		const commandsList = new MessageEmbed()
 			.setTitle('Commands List')
-			.setURL('https://github.com/Luhua-codes/checkInBot/blob/main/README.md#commands')
+			.setDescription('Visit the [docs](https://github.com/Luhua-codes/checkInBot/blob/main/README.md#commands) for more details.')
 			.addFields(
 				{ name: '/beep', value: 'Replies with "Boop!"' },
 				{ name: '/help', value: 'Replies with the list of commands and their descriptions' },
 				{ name: '/ping', value: 'Replies with "Pong!"' },
-				{
-					name: '/server', value: 'Replies with server information:\n' +
-						'- server name\n' +
-						'- number of members\n' +
-						'- date created\n' +
-						'- server description',
-				},
-				{name: '/user', value: 'Replies with user information:\n' +
-						'- Avatar link\n' +
-						'- User name and discriminator\n' +
-						'By default, Chibi provides information about the user that executes the command. If the `target` option is selected and filled, information will instead be provided about the `target` user.'})
+				{ name: '/server', value: 'Replies with server information' },
+				{ name: '/user', value: 'Replies with user information' })
 			.setTimestamp();
 
 		await interaction.reply({ embeds: [commandsList] });
