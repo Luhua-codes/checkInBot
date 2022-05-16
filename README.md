@@ -2,8 +2,8 @@
 Discord bot to schedule, ping, and assign roles for zine contributor check-ins
 
 ## Info
-This bot operates exclusively through slash commands.  
-In a Discord channel, either type `/`, or click on the plus button and select "Use Slash Command" to utilize the bot.  
+Chibi operates exclusively through slash commands.  
+To utilize the bot, navigate to a Discord channel that Chibi has access to. Either type `/`, or click on the plus button and select "Use Slash Command".  
 
 ![image](https://user-images.githubusercontent.com/53491467/168551128-2b6088c1-4c9a-48ec-961d-5b02596ed808.png)
 
