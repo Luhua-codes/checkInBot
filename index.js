@@ -11,12 +11,14 @@ client.once('ready', () => {
 });
 
 client.on('interactionCreate', async interaction => { //listen for interactions
-	if (!interaction.isCommand()) return;
+	if (!interaction.isCommand()) return; //leave method if not command
 
 	const { commandName } = interaction;
 
 	if (commandName === 'ping') { //strict equality, always considers objs of different types to be !=
 		await interaction.reply('Pong!');
+	}else if(commandName === 'beep'){
+		await interaction.reply("Boop!");
 	}
 	else if (commandName === 'server') {
 		await interaction.reply(`**Server name**: ${interaction.guild.name}\n**Total members**: ${interaction.guild.memberCount}\n**Server created on**: ${interaction.guild.createdAt}\n**Server description**: ${interaction.guild.description == null ? 'No description set' : interaction.guild.description}`); //backtick instead of single quotes allows use of template strings
