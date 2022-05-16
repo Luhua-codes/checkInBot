@@ -10,5 +10,19 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
+client.on('interactionCreate', async interaction => { //listen for interactions
+	if(!interaction.isCommand()) return;
+
+	const { commandName } = interaction;
+
+	if(commandName === 'ping'){ //strict equality, always considers objs of different types to be !=
+		await interaction.reply('Pong!');
+	}else if (commandName === 'server'){
+		await interaction.reply('Server info.');
+	}else if(commandName === 'user'){
+		await interaction.reply('User info.');
+	}
+});
+
 // Login to Discord with your client's token
 client.login(token);
